@@ -2,13 +2,13 @@
 
 The Singleton pattern is a design pattern that restricts the instantiation of a class to a single instance, ensuring controlled access to that instance globally throughout an application.
 
-We can check that using __"Race Data Detector"__ from golang, it is "-race" parameter to check race detector, which helps identify data races in concurrent programs, for example if there are two or more goroutines acessing the same varibles concurrently. ![Data Race Detector](https://go.dev/doc/articles/race_detector)
+We can check that using __"Race Data Detector"__ from golang, it is "-race" parameter to check race detector, which helps identify data races in concurrent programs, for example if there are two or more goroutines acessing the same varibles concurrently. [Data Race Detector](https://go.dev/doc/articles/race_detector)
 
 You can do that in two different ways:
-* __Not thread Safe__ - ![golang-singleton-unsafe.go](golang-singleton-unsafe.go)
+* __Not thread Safe__ - [golang-singleton-unsafe.go](golang-singleton-unsafe.go)
     * here race detector point 2-4 data races, can cause a deadlock
-* __Thread Safe__ - ![golang-singleton-once.go](golang-singleton-once.go)
-    * here we are using ![__sync.Once__](https://pkg.go.dev/sync#Once.Do) that is a synchronization primitive that ensure a function is executed exactly once, even across multiples goroutines
+* __Thread Safe__ - [golang-singleton-once.go](golang-singleton-once.go)
+    * here we are using [__sync.Once__](https://pkg.go.dev/sync#Once.Do) that is a synchronization primitive that ensure a function is executed exactly once, even across multiples goroutines
 
 
 ## Benefits
